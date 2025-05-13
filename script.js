@@ -20,3 +20,26 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+function updateCountdown() {
+  const countdownElement = document.getElementById("timer");
+  const eventDate = new Date("2025-05-26T17:00:00");
+  const now = new Date();
+  const difference = eventDate - now;
+
+  if (difference <= 0) {
+    countdownElement.innerHTML = "Camp już trwa!";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / 1000 / 60) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  countdownElement.innerHTML = `
+    ${days} dni ${hours}h ${minutes}m ${seconds}s
+  `;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
