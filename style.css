@@ -1,77 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+/* Reset podstawowy */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+/* Tło dopasowane do plakatu */
 body {
   font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: #f6f7f9;
+  background: linear-gradient(to bottom, #b5372b, #f57c6c);
   color: #333;
   line-height: 1.6;
-}
-
-.container {
-  max-width: 860px;
-  margin: 40px auto;
   padding: 20px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  transition: all 0.3s ease-in-out;
 }
 
+/* Główne okno z jasnym tłem */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Obraz plakatu */
+.banner {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Nagłówki */
 h1 {
-  color: #e53935;
   text-align: center;
-  margin-bottom: 0;
-  font-size: 2.2em;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #b5372b;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 1.1em;
-  color: #666;
-  margin-top: 0;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #555;
 }
 
-.banner {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
+/* Sekcje */
 section {
   margin-bottom: 30px;
 }
 
-h2 {
-  color: #444;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
+section h2 {
+  font-size: 1.6em;
   margin-bottom: 15px;
+  color: #b5372b;
 }
 
+/* Listy */
 ul {
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
 }
 
 ul li {
-  margin-bottom: 6px;
+  background: #ffeae6;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-left: 5px solid #b5372b;
+  border-radius: 6px;
 }
 
+/* Zegar */
 #timer {
-  font-size: 1.8em;
-  color: #d84315;
-  text-align: center;
+  font-size: 2em;
   font-weight: bold;
-  margin-top: 10px;
+  text-align: center;
+  color: #d32f2f;
+  margin-top: 15px;
 }
 
-a {
-  color: #1976d2;
+/* Kontakt */
+.contact a {
+  color: #b5372b;
   text-decoration: none;
+  font-weight: bold;
 }
 
-a:hover {
+.contact a:hover {
   text-decoration: underline;
 }
 
+/* Responsywność */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  section h2 {
+    font-size: 1.3em;
+  }
+
+  #timer {
+    font-size: 1.5em;
+  }
+}
